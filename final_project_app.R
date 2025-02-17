@@ -172,7 +172,7 @@ server <- function(input, output, session) {
   make_barplot_replicate <- function(inputdf){
     plot <- ggplot(inputdf,aes(x = replicate)) + geom_bar(fill = "#CC79A7", color = "black", width = 0.7, size = 1)+
       labs(title = "Replicates", x = "Replicate", y = "Count") + theme_minimal() + theme(legend.position = "none") +
-      theme(plot.background = element_rect(fill = "#151515", color = 
+      theme(plot.background = element_rect(fill = "#151515", color  = "#151515"),
             axis.text.x = element_text(size = 18, color = "white"),  
             axis.text.y = element_text(size = 18, color = "white"),  
             axis.title.x = element_text(size = 24, color = "white"), 
@@ -181,7 +181,7 @@ server <- function(input, output, session) {
             legend.text = element_text(size = 24, color = "white"),
             legend.title = element_text(size = 24, color = "white"),
             panel.grid.major.x = element_blank(),  
-            panel.grid.minor.x = element_blank())   
+            panel.grid.minor.x = element_blank())
     return(plot)
     
   }
@@ -190,7 +190,7 @@ server <- function(input, output, session) {
   make_barplot_growth_stage <- function(inputdf){
     plot <- ggplot(inputdf,aes(x = growth_stage)) + geom_bar(fill = "#009E73", color = "black", width = 0.7, size=1)+
       labs(title = "Growth Stages", x = "Growth Stage", y = "Count") + theme_minimal() + theme(legend.position = "none") +
-      theme(plot.background = element_rect(fill = "#151515", color = 
+      theme(plot.background = element_rect(fill = "#151515", color  = "#151515"),
             axis.text.x = element_text(size = 18, color = "white"),  
             axis.text.y = element_text(size = 18, color = "white"),  
             axis.title.x = element_text(size = 24, color = "white"), 
@@ -199,7 +199,7 @@ server <- function(input, output, session) {
             legend.text = element_text(size = 24, color = "white"),
             legend.title = element_text(size = 24, color = "white"),
             panel.grid.major.x = element_blank(),  
-            panel.grid.minor.x = element_blank())  
+            panel.grid.minor.x = element_blank())
     return(plot)
   }
   
