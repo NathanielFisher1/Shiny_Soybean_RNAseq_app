@@ -395,8 +395,13 @@ server <- function(input, output, session) {
   
   
   # Make Outputs
-  output$de_summary_table <- renderDT(datatable(DE_summary_table_data,options = list(ordering = TRUE))%>%
-                                        formatRound(c(2:16), 3))
+  
+  # Reformat table 
+  
+  DE_summary_table_data <- DE_summary_table_data %>%
+    mutate(across(where(is.numeric), ~ round(.x, 3)))
+  output$de_summary_table <- renderDT(datatable(DE_summary_table_data,options = list(ordering = TRUE))) #%>%
+                                        #formatRound(c(2:16), 3))
   output$volcano <- renderPlot(volcano_plot(DE_summary_table_data,input$var1, input$button1, input$button2, input$slide, input$col1, input$col2),
                                width = 800, height = 600)
   
